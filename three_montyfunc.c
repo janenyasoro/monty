@@ -29,8 +29,9 @@ void lastTERROR(void)
 		i++;
 	}
 
-	new[i] = malloc(strlen(str) +1);
+	new[i] = malloc(strlen(str) + 1);
 	if (new[i] == NULL)
+	{
 		fprintf(stderr, "Error: malloc failed\n");
 		return;
 	}

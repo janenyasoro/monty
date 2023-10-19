@@ -9,7 +9,7 @@ void liner(char **lineptr)
 {
 	if (*lineptr && **lineptr == 0)
 	{
-		fre(lineptr);
+		free(lineptr);
 	}
 
 	free(*lineptr);

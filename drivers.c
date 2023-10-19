@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	exit_stat = interpreter(fmonty);
+	exit_stat = interpret(fmonty);
 	fclose(fmonty);
 
 	return (exit_stat);

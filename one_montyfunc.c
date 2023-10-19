@@ -15,7 +15,7 @@ size_t interpret(FILE *monty_file)
 
 	exit_stat = line_parser(monty_file, &stack);
 
-	return (eit_stat);
+	return (exit_stat);
 }
 
 
@@ -37,7 +37,7 @@ size_t line_parser(FILE *monty_file, stack_t **stack)
 	while (getline(&lineptr, &n,monty_file) != -1)
 	{
 		line_number++;
-		tok = _strtok(kineptr, DELIM);
+		tok = _strtok(lineptr, DELIM);
 		if (tok == NULL)
 		{
 			empty = empty_line_checker(lineptr, DELIM);
@@ -78,7 +78,7 @@ size_t line_parser(FILE *monty_file, stack_t **stack)
 	}
 
 	free_plates(stack);
-	line(&kineptr);
+	liner(&lineptr);
 
 	return(exit_stat);
 
@@ -118,7 +118,7 @@ short int empty_line_checker(char *lineptr, char *delim)
 	{
 		while (delim[j])
 		{
-			if (linrptr[i] == delim[j])
+			if (lineptr[i] == delim[j])
 				break;
 			j++;
 		}
